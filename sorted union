@@ -1,0 +1,13 @@
+function uniteUnique(arr) {
+   let finalArray = [];
+   
+  let values = Object.values(arguments);
+  for(var i=0; i<values.length; i++){
+    for(var j=0; j<values[i].length; j++){
+      if(finalArray.indexOf(values[i][j]) === -1){
+        finalArray.push(values[i][j]);
+      }
+    }
+  }
+  return finalArray;
+  }
