@@ -1,0 +1,34 @@
+function pairElement(str) {
+  //split the array
+str.split(" ")
+//enclosing array
+var strArray = [];
+//switch statement for each letter in dna strand
+var search = function(char){
+  switch(char){
+  case "A":
+  strArray.push(["A", "T"]);
+  break;
+  case "T":
+  strArray.push(["T", "A"]);
+  break;
+  case "G":
+  strArray.push(["G", "C"]);
+  break;
+  case "C":
+  strArray.push(["C", "G"])
+  break;
+}}
+// loop throught the string and pass it to our swithc statement
+for(var i=0;i< str.length; i++){
+  search(str[i]);
+
+}
+//return the switch statement with all the parring in the array defined earlier
+
+  return strArray;
+}
+  
+//call function and log results :)
+let result = pairElement("GCTC");
+console.log(result);
