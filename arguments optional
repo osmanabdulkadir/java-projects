@@ -1,0 +1,29 @@
+function addTogether() {
+  // define arg1 and arg2 to be equal to the arguments
+  let [arg1, arg2] = arguments;
+//checks if the argument is a number
+  function isNum(num) {
+    return Number.isInteger(num);
+  }
+//is the the first number is not a argument i will return undefined
+  if (!isNum(arg1)) {
+    return undefined;
+  }
+  //if both arguments are numbers it will return the sum
+  else if (isNum(arg1) && isNum(arg2)) {
+    return arg1 + arg2;
+  }
+  //is there is only one arguemnt it will return a fuction that will provied the second arguments
+  else if (!arg2) {
+    return function(newArg) {
+      if (isNum(newArg)) {
+        return arg1 + newArg;
+      }
+    }
+  }
+}
+
+
+
+let result = addTogether(5 ,7);
+console.log(result);
