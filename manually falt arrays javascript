@@ -1,0 +1,21 @@
+function steamrollArray(arr) {
+  //define a new arr and set it equal to the function paramater;
+  const newArr = arr.reduce((acc, item) =>{
+    //check if the item passed is a array
+    if(Array.isArray(item)){
+      //we set the accumlator eqaul to accumalot concAT WITH THE FUNCTION
+      acc = acc.concat(steamrollArray(item));
+    } else{
+      //is the item is not an array we push the item into the accumlaotr
+      acc.push(item);
+    }
+    //we return the accumalator
+    return acc;
+    //we return the extra array at the end
+  }, []);
+
+  return newArr;
+}
+
+let result = steamrollArray([1, [2], [3, [[4]]]]);
+console.log(result);
