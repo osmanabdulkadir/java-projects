@@ -1,0 +1,21 @@
+function truthCheck(collection, pre) {
+  //define a output 
+ let result = true;
+//loop through the collection
+for(var i=0; i<collection.length; i++){
+  //define a set of falsy values and use the or opratotr to see if they are in the proptry.
+  if(collection[i][pre] == false ||
+      collection[i][pre] == undefined ||
+      collection[i][pre] == "" ||
+      Number.isNaN(collection[i][pre])){
+        // set the final value to the result
+    result = false;
+  }
+}
+//return the result
+return result;
+}
+
+
+let result = truthCheck([{"single": "double"}, {"single": NaN}], "single");
+console.log(result);
