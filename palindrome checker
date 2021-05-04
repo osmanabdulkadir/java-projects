@@ -1,0 +1,27 @@
+function palindrome(str) {
+// create a regex for all the spaces and special charaters
+var regex = /[^a-zA-Z\d\s:]/g;
+//replace the regex
+str = str.replace(regex, "");
+//set a new vvariable to be our comaprison variable
+
+var reversedStr = str.toLowerCase().split("").reverse().join("");
+var reversedStr = reversedStr.replace(/\s/g, "");
+var forwardStr = reversedStr.split("").reverse().join("");
+var forwardStr = forwardStr.replace(/\s/g, "");
+//loop through the varibale
+{
+  //if variable === str we return true 
+  if(forwardStr === reversedStr) {
+   return true;
+  }if(forwardStr !== reversedStr){
+    return false;
+  }
+  }
+  return reversedStr;
+  
+}
+
+
+let result= palindrome("almostomla");
+console.log(result);
