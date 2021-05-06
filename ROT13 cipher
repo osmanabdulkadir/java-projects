@@ -1,0 +1,27 @@
+function rot13(str) {
+  //define a output string;
+var decode  ="";
+//loop through string 
+for(var i=0; i<str.length; i++){
+  //define a varibale for the charater code of each string
+  var char = str.charCodeAt(i);
+//if the charater code is with the asscii range we dont chang the charater code
+  if(char < 65 || char > 90){
+    char = char;
+  } else{
+    //else we add 13 to the charater code
+    char += 13;
+  }
+  //if the charater code is greater than 90 
+  if(char > 90){
+    //we subtract 90 from the charater code and add 64 
+    char = (char - 90) + 64
+  }
+  // we set our output sting to the character code, using the fromCharCode method
+  decode += String.fromCharCode(char)
+}
+//we return the output string;
+return decode;
+}
+let result = rot13("SERR PBQR PNZC");
+console.log(result);
