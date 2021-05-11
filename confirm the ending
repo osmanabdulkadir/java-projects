@@ -1,0 +1,11 @@
+function confirmEnding(str, target) {
+var targetLength = target.length;
+var newstr = str.substring(str.length - targetLength)
+console.log(newstr)
+console.log(target);
+return newstr == target;
+
+  }
+
+let result =confirmEnding("Bastian", "n");
+console.log(result);
